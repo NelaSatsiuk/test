@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rangeBullet = document.querySelector('.order__range-value')
 
     let showSliderValue = () => {
-        rangeBullet.textContent = rangeSlider.value;
+        rangeBullet.textContent = rangeSlider.value + ' %';
     }
     showSliderValue();
     rangeSlider.addEventListener("input", showSliderValue);
