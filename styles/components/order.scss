@@ -1,0 +1,339 @@
+.order {
+  background: #272733 url("/img/bg-order.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 120px;
+  padding-bottom: 180px;
+
+  &__title {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 3.6rem;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &--blue {
+      color: $blue;
+    }
+  }
+
+  &__description {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: $white;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 0 200px;
+    text-align: center;
+    position: relative;
+
+    &:not(:first-child)::before {
+      content: '• • • • •';
+      color: $gray;
+      position: absolute;
+      left: -38px;
+      font-size: 2rem;
+      top: 35px;
+    }
+  }
+
+  &__icon {
+    border: 5px solid #286690;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3E9CDC;
+
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  .order__icon:last-child::before {
+    content: '2';
+    color: green;
+  }
+
+  &__text {
+    color: $white;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 20px 0;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px;
+    gap: 30px;
+    grid-template-areas:
+    "type-system email name"
+    "range range file"
+    ". submit .";
+
+  }
+
+  &__field {
+    select,
+    input {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__field:nth-child(1) {
+    position: relative;
+    &.active::after {
+      transform: rotate(180deg);
+      top: 45%;
+      color: $white;
+    }
+    &::after {
+      content: '\2304';
+      position: absolute;
+      right: 10px;
+      pointer-events: none;
+      font-size: 2.5rem;
+      color: $dark-gray;
+
+    }
+
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      grid-area: type-system;
+      outline: none;
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1.8rem;
+      padding: 10px 30px 10px 10px;
+      color: $dark-gray;
+      border-radius: 3px;
+      outline: none;
+      border: 2px solid transparent;
+      opacity: 0.85;
+      cursor: pointer;
+      option {
+        background: $dark-gray;
+        color: $white;
+      }
+      &.active {
+        background: $light-gray;
+        color: $white;
+      }
+    }
+    select::-ms-expand {
+      display: none;
+    }
+    select::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    select::-webkit-scrollbar-track-piece {
+      background-color: $light-gray;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    select::-webkit-scrollbar-track {
+      background-color: $light-gray;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    select::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: 3px;
+    }
+  }
+
+  &__field:nth-child(2) {
+    grid-area: email;
+  }
+
+  &__field:nth-child(3) {
+    grid-area: name;
+
+  }
+
+  &__field:nth-child(4) {
+    grid-area: range;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "range-text range-value"
+    "range range";
+
+    input {
+      grid-area: range;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    input::-webkit-slider-thumb {
+      border: 2px solid $dark-blue;
+      height: 20px;
+      width: 20px;
+      margin-top: -8px;
+      border-radius: 50%;
+      background: $blue;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input::-moz-range-thumb {
+      border: 2px solid $dark-blue;
+      height: 20px;
+      width: 20px;
+      margin-top: -8px;
+      border-radius: 50%;
+      background: $blue;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 5px;
+      cursor: pointer;
+      background: $gray;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    input::-webkit-slider-runnable-track {
+       background: $gray;
+     }
+    input::-moz-range-track {
+      width: 100%;
+      height: 5px;
+      cursor: pointer;
+      background: $gray;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__range-text {
+    grid-area: range-text;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: $white;
+  }
+
+  &__range-value {
+    grid-area: range-value;
+    margin-left: auto;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: $white;
+  }
+
+  &__field:nth-child(5) {
+    padding: 10px;
+    border-radius: 4px;
+    grid-area: file;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: $transition;
+    cursor: pointer;
+    color: $dark-gray;
+
+    &:hover {
+      background: $gray;
+    }
+
+    input {
+      display: none;
+    }
+
+    svg {
+      fill: $dark-gray;
+      margin-right: 10px;
+    }
+  }
+
+  &__field:nth-child(6) {
+    grid-area: submit;
+
+    input {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      background: $blue;
+      border: 1px solid $white;
+      color: $white;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: $transition;
+
+      &:hover {
+        border-color: $gray;
+        background: $white;
+        color: $dark-gray;
+      }
+    }
+  }
+
+  &__field:nth-child(2),
+  &__field:nth-child(3) {
+    input {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1.8rem;
+      padding: 10px;
+      color: $dark-gray;
+      border-radius: 3px;
+      outline: none;
+      border: 2px solid transparent;
+      opacity: 0.85;
+
+      &::placeholder {
+        color: #2A2B30;
+      }
+
+      &:focus,
+      &:active {
+        border: 2px solid $blue;
+      }
+    }
+  }
+}

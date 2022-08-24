@@ -1,0 +1,155 @@
+@media (max-width: 1200px) {
+  .order {
+    &__item {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1050px) {
+  .footer {
+    &__line {
+      display: none;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .footer {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__payment {
+      margin: 20px 0;
+    }
+    &__item {
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    &__logo {
+      font-size: 2.5rem;
+    }
+
+    &__list {
+      display: none;
+    }
+
+    &__burger {
+      display: block;
+    }
+  }
+
+
+  .main {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    &__title {
+      margin-bottom: 50px;
+    }
+    &__list {
+      margin-bottom: 50px;
+    }
+  }
+
+  .order {
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+    .order {
+      &__description {
+        margin-bottom: 50px;
+      }
+    }
+    &__list {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    padding-top: 130px;
+    padding-bottom: 30px;
+
+    &__title {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      font-size: 1.8rem;
+    }
+
+    &__list {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      font-size: 1.6rem;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__order {
+      margin: 0 0 20px 0;
+    }
+  }
+  .order {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__list {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__description {
+      margin-bottom: 30px;
+    }
+
+    &__item::before {
+      display: none;
+    }
+    &__icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    &__form {
+      grid-template-columns: 1fr;
+      grid-template-rows: 50px 50px 50px 50px 50px 50px;
+      grid-template-areas:
+    "type-system"
+    "email"
+    "name"
+    "range"
+    "file"
+    "submit";
+    }
+
+    &__field:nth-child(4) {
+    }
+
+    &__field:nth-child(6) {
+      input {
+        margin-top: 0;
+      }
+    }
+  }
+
+}

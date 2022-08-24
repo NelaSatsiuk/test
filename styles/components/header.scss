@@ -1,0 +1,120 @@
+.header {
+  padding: 20px 0;
+  background: $dark-gray;
+  opacity: 0.9;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60px;
+  }
+
+  &__logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+  }
+
+  &__symbol {
+    display: inline-block;
+    color: $white;
+    cursor: crosshair;
+    &:hover {
+      color: $blue;
+    }
+
+    &--blue {
+      color: $blue;
+
+      &:hover {
+        color: $white;
+      }
+
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 60px;
+    }
+
+  }
+
+  &__link {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+    z-index: 3;
+
+    span {
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      border-radius: 2px;
+      background: $blue;
+      top: 50%;
+      left: 50%;
+      transition: $transition;
+      transform: translate(-50%, -50%);
+    }
+
+    span:nth-child(2) {
+      top: calc(50% - 8px);
+    }
+
+    span:nth-child(3) {
+      top: calc(50% + 8px);
+    }
+
+    &.active {
+      span:nth-child(1) {
+        background: transparent;
+      }
+
+      span:nth-child(2) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(-45deg);
+      }
+    }
+  }
+}
