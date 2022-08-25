@@ -2,6 +2,7 @@
 .footer {
   background: $light-gray;
   padding: 20px 0;
+
   &__content {
     min-height: 40px;
     display: flex;
@@ -33,6 +34,7 @@
     &:not(:first-child) {
       margin-left: 40px;
     }
+
     svg {
       fill: $blue;
       margin-right: 10px;
@@ -69,10 +71,13 @@
     color: $white;
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
   &__line {
     display: block;
     height: 20px;

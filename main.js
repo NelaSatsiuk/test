@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     'use strict'
+
     // burger
     const burger = document.querySelector('.header__burger')
     const menu = document.querySelector('.burger-menu')

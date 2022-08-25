@@ -24,15 +24,20 @@
     display: inline-block;
     color: $white;
     cursor: crosshair;
-    &:hover {
-      color: $blue;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $blue;
+      }
     }
 
     &--blue {
       color: $blue;
 
-      &:hover {
-        color: $white;
+      @media (hover: hover) {
+        &:hover {
+          color: $white;
+        }
       }
 
     }
@@ -67,8 +72,10 @@
     text-decoration: none;
     transition: $transition;
 
-    &:hover {
-      color: $blue;
+    @media (hover: hover) {
+      &:hover {
+        color: $blue;
+      }
     }
   }
 

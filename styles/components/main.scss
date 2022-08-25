@@ -13,6 +13,7 @@
     text-transform: uppercase;
     color: $black;
     margin-bottom: 100px;
+
     &--blue {
       color: $blue;
     }
@@ -59,10 +60,12 @@
     border-color: $white;
     margin: 0 30px 0 0;
 
-    &:hover {
-      border-color: $gray;
-      background: $white;
-      color: $dark-gray;
+    @media (hover: hover) {
+      &:hover {
+        border-color: $gray;
+        background: $white;
+        color: $dark-gray;
+      }
     }
   }
 
@@ -71,10 +74,12 @@
     background: $white;
     border-color: $gray;
 
-    &:hover {
-      border-color: $white;
-      background: $blue;
-      color: $white;
+    @media (hover: hover) {
+      &:hover {
+        border-color: $white;
+        background: $blue;
+        color: $white;
+      }
     }
   }
 }
